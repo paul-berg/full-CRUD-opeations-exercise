@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: 56px 1fr 40px;
+        }
+
+        #login {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .delete-button {
+            /* margin: auto; */
+            top: 0;
+            right: 0;
+            width: 16px;
+            height: 16px;
+            border: 1px solid black;
+            border-radius: 100%;
+            position: absolute;
+            background-color: red;
+            color: white;
+        }
+
+        .delete-button:before {
+            content: 'x';
+            position: absolute;
+            top: -50%;
+            right: 25%;
+        }
+
+        .selectedDiv {
+            background-color: #eef;
+        }
+    </style>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#allusers" id="all">Все пользователи</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#login" id="logout">Выход</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main role="main">
+        <div class="jumbotron" id="login">
+            <div class="container-sm">
+                <h4>Для входа в систему введите имя пользователя</h4>
+                <form class="form-signin">
+                    <div class="form-group">
+                        <input id="inputEmail" class="form-control" placeholder="" required="" autofocus="">
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" id="login-button" type="submit">Войти</button>
+                </form>
+            </div>
+        </div>
+        <div id="notes">
+            <div class="jumbotron">
+                <div class="container">
+                    <h4>Добавить заметку</h4>
+                    <form class="form-signin">
+                        <div class="form-group">
+                            <textarea id="note-text" class="form-control" placeholder="" required=""
+                                autofocus=""></textarea>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" id="add-note" type="submit">Добавить</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row" id="notes-container">
+                </div>
+                <div class="alert alert-primary" role="alert">
+                    This is a primary alert—check it out!
+                </div>
+                <hr>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>© 2020</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
